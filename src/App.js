@@ -1,13 +1,11 @@
 import React from "react";
-import Home from "./pages/Home";
-import Logo from "./components/logo";
+import {Home} from './pages'
+
 
 function App() {
   return (
     <>
       <Home />
-      <Logo size={'120px'}/>  
-      <Logo size={'lr'}/> 
     </>
   );
 }

@@ -1,13 +1,22 @@
 import React from "react";
-import {Body, Title, SubTitle, Image, Section, Item} from "./styles/jumbotron";
+import {
+  Body,
+  Title,
+  SubTitle,
+  Image,
+  Section,
+  Container,
+} from "./styles/jumbotron";
 
-export default function Jumbotron({children, ...restProps}) {
-  return <Body {...restProps}>{children}</Body>;
+export default function Jumbotron({children, direction, ...restProps}) {
+  return (
+    <Container>
+      <Body {...restProps} direction={direction}>
+        {children}
+      </Body>
+    </Container>
+  );
 }
-
-Jumbotron.Item = function JumbotronItem({direction, children, ...restProps}) {
-  return <Item direction={direction} {...restProps}>{children}</Item>;
-};
 
 Jumbotron.Section = function JumbotronSection({children, ...restProps}) {
   return <Section {...restProps}>{children}</Section>;

@@ -22,9 +22,11 @@ export const Body = styled.div`
   background-position: center center;
   background-image: ${({src, gradient}) => handleBg(src, gradient)};
 
+  // Specific css for homepage
   &.home {
     background-size: cover;
     height: 95vh;
+    border-bottom: 8px solid #222;
   }
 
   @media (min-width: 1080px) {
@@ -45,7 +47,7 @@ export const DarkFilter = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15vh;
   margin: 25px 5%;
   width: 100%;
   max-width: 1200px;

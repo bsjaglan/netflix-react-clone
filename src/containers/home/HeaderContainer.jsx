@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, Logo, } from "../../components/";
+import {Header, Logo } from "../../components/";
 import {OptFormContainer} from "./index";
 
 function HeaderContainer() {

@@ -1,28 +1,26 @@
 import styled from "styled-components";
 
-export const Body = styled.div`
+export const Container = styled.div`
   display: flex;
-  margin: auto;
   width: 100%;
   background-color: black;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-export const Item = styled.div`
-  display: flex;
-  border-bottom: 8px solid #222;
-  width: 100%;
   padding: 5%;
+  border-bottom: 8px solid #222;
+`;
+
+export const Body = styled.div`
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  align-items: center;
   flex-direction: ${({direction}) => direction};
-  @media (max-width: 960px) {
+
+  @media (max-width: 740px) {
     flex-direction: column;
   }
 `;
 export const Section = styled.div`
-  // border: 1px solid red;
-  padding: 3% 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;

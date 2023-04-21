@@ -1,6 +1,7 @@
 import React from "react";
-import {Footer} from "../../components";
-import {homeFooterLinks} from "../../data/footerData";
+import {Footer, SelectMenu} from "../../components";
+import homeFooterLinks from "../../data/homeFooterLinks.json";
+import langaugeOptions from '../../data/languageOptions.json'
 
 function FooterContainer() {
   return (
@@ -20,7 +21,7 @@ function FooterContainer() {
         </Footer.SubSection>
       </Footer.Section>
       <Footer.Section>
-        Language
+        <SelectMenu optionList={langaugeOptions}/>
       </Footer.Section>
       <Footer.Section>
         <Footer.CustomLink style={{textDecoration: "none"}}>

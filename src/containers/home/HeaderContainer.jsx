@@ -1,6 +1,7 @@
 import React from "react";
-import {Header, Logo } from "../../components/";
+import {Header, Logo, SelectMenu } from "../../components/";
 import {OptFormContainer} from "./index";
+import langaugeOptions from '../../data/languageOptions.json'
 
 function HeaderContainer() {
   return (
@@ -9,7 +10,7 @@ function HeaderContainer() {
         <Header.Section>
           <Logo size="medium" mediaQuery={{media: "960px", newSize: "100px"}} />
           <Header.Group>
-            <p>Language</p>
+            <SelectMenu optionList={langaugeOptions}/>
             <Header.SignInBtn>Sign In</Header.SignInBtn>
           </Header.Group>
         </Header.Section>

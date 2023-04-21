@@ -1,5 +1,10 @@
 import styled from "styled-components/macro";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Label = styled.label`
   position: absolute;
 
@@ -27,9 +32,11 @@ export const Label = styled.label`
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 
   // When input has some value in it
-  &.active {
+  &.filled {
     transform: translate(0, -2px) scale(0.7);
   }
+
+  
 `;
 
 export const Input = styled.input`
@@ -44,6 +51,12 @@ export const Input = styled.input`
   // When Input is in focus state do some css on Label
   &:focus + ${Label} {
     transform: translate(0, -2px) scale(0.7);
+  }
+
+
+  // When input have some errors and touched as well 
+  &.input-error {
+    border: 1px solid red;
   }
 
   // Media queries as per different classes
@@ -65,4 +78,9 @@ export const Body = styled.div`
     maxwidth: ${({maxWidth}) => maxWidth};
     height: ${({height}) => height};
   }
+`;
+
+export const ErrorText = styled.p`
+  margin-top: 5px;
+  color: red;
 `;

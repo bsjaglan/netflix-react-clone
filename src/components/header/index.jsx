@@ -19,13 +19,17 @@ export default function Header({
 }) {
   return (
     <Body src={src} gradient={gradient} {...restProps}>
-      <DarkFilter darkFilter={darkFilter} >{children}</DarkFilter>
+      <DarkFilter darkFilter={darkFilter}>{children}</DarkFilter>
     </Body>
   );
 }
 
-Header.Content = function HeaderContent({children, ...restProps}) {
-  return <Content {...restProps}>{children}</Content>;
+Header.Content = function HeaderContent({children, gap, ...restProps}) {
+  return (
+    <Content gap={gap} {...restProps}>
+      {children}
+    </Content>
+  );
 };
 
 Header.Section = function HeaderSection({children, ...restProps}) {

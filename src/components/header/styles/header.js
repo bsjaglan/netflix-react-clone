@@ -28,6 +28,11 @@ export const Body = styled.div`
     height: 95vh;
     border-bottom: 8px solid #222;
   }
+  &.sign-in {
+    height: 100vh;
+    background-size: cover;
+
+  }
 
   @media (min-width: 1080px) {
     background-size: cover;
@@ -48,6 +53,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15vh;
+  gap: ${({gap}) => gap};
   margin: 25px 5%;
   width: 100%;
   max-width: 1200px;

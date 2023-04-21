@@ -7,3 +7,4 @@ export {default as FloatingInput} from "./floating-input";
 export {default as OptForm} from "./opt-form";
 export {default as Footer} from "./footer";
 export {default as SelectMenu} from "./select-menu";
+export {default as CustomForm} from "./form";

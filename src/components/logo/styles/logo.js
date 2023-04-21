@@ -10,13 +10,9 @@ const handleSize = (size) => {
   } else return size;
 };
 
-export const Body = styled.div`
-  width: fit-content;
+export const Image = styled.img`
   cursor: pointer;
   padding-top: 5px;
-`;
-
-export const Image = styled.img`
   width: 145px;
   width: ${({size}) => handleSize(size)};
 

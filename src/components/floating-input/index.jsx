@@ -1,28 +1,30 @@
 import React, {useState} from "react";
-import {Body, Input, Label} from "./styles/floating-input";
+import {Container, Body, Input, Label, ErrorText} from "./styles/floating-input";
 
 export default function FloatingInput({
+  value,
   placeholder,
   width,
   height,
   containerStyle,
   labelStyle,
+  isTouched,
+  haveErrors,
   ...restProps
 }) {
-
-  const [isActive, setIsActive] = useState(false);
-
   return (
-    <Body style={containerStyle} width={width} height={height}>
-      <Input
-        {...restProps}
-        onChange={(e) =>
-          e.target.value !== "" ? setIsActive(true) : setIsActive(false)
-        }
-      />
-      <Label className={isActive ? "active" : ""} style={labelStyle} >
-        {placeholder}
-      </Label>
-    </Body>
+    <Container>
+      <Body style={containerStyle} width={width} height={height}>
+        <Input
+          value={value}
+          {...restProps}
+          className={haveErrors && isTouched ? "input-error" : ""}
+        />
+        <Label className={value && "filled"} style={labelStyle}>
+          {placeholder}
+        </Label>
+      </Body>
+      {haveErrors && isTouched && <ErrorText>{haveErrors}</ErrorText>}
+    </Container>
   );
 }

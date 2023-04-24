@@ -5,7 +5,10 @@ import {
   optFormIntialValues,
   optFormValidationSchema,
 } from "../../constants/formSchemas";
+
 import {OptForm, FloatingInput} from "../../components";
+
+// ------------------------------------------------------------------------------------------------------------ //
 
 function OptFormContainer() {
   const onSubmit = (values, action) => {
@@ -35,6 +38,7 @@ function OptFormContainer() {
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
+          className='opt-form'
         />
         <OptForm.Button type="submit">Get Started</OptForm.Button>
       </OptForm.Group>

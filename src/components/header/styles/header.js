@@ -28,11 +28,6 @@ export const Body = styled.div`
     height: 95vh;
     border-bottom: 8px solid #222;
   }
-  &.sign-in {
-    height: 100vh;
-    background-size: cover;
-
-  }
 
   @media (min-width: 1080px) {
     background-size: cover;

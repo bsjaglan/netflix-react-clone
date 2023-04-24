@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: ${({margin}) => margin};
 `;
 
 export const Label = styled.label`
@@ -32,11 +33,7 @@ export const Label = styled.label`
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 
   // When input has some value in it
-  &.filled {
-    transform: translate(0, -2px) scale(0.7);
-  }
-
-  
+  ${({isFilled}) => isFilled && `transform: translate(0, -2px) scale(0.7);`}
 `;
 
 export const Input = styled.input`
@@ -53,10 +50,13 @@ export const Input = styled.input`
     transform: translate(0, -2px) scale(0.7);
   }
 
-
-  // When input have some errors and touched as well 
+  // When input have some errors and touched as well
   &.input-error {
     border: 1px solid red;
+
+    &.sign-in-form {
+      border-bottom: 2px solid #e87c03;
+    }
   }
 
   // Media queries as per different classes
@@ -66,6 +66,11 @@ export const Input = styled.input`
       height: 40px;
       font-size: 14px;
     }
+  }
+
+  &.sign-in-form {
+    background-color: #333333;
+    border: none;
   }
 `;
 
@@ -83,4 +88,9 @@ export const Body = styled.div`
 export const ErrorText = styled.p`
   margin-top: 5px;
   color: red;
+  font-size: 13px;
+
+  &.sign-in-form{
+    color: orange;
+  }
 `;

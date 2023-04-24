@@ -6,6 +6,14 @@ export const Container = styled.div`
   width: 100%;
   justify-content: center;
   background-color: black;
+
+  &.sign-in{
+    background: rgba(0, 0, 0, 0.7);
+    @media(max-width: 740px){
+      border-top: 1px solid gray;
+      background: black;
+    }
+  }
 `;
 
 export const Body = styled.div`

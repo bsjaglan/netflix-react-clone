@@ -1,0 +1,9 @@
+[
+  {"id": 1, "text": "FAQ", "src": "#"},
+  {"id": 5, "text": "Privacy", "src": "#"},
+  {"id": 10, "text": "Netflix Shop", "src": "#"},
+  {"id": 12, "text": "Cookie Preferences", "src": "#"},
+  {"id": 14, "text": "Help Center", "src": "#"},
+  {"id": 18, "text": "Corporate Information", "src": "#"},
+  {"id": 20, "text": "Terms of Use", "src": "#"}
+]

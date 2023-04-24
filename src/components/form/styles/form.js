@@ -10,9 +10,6 @@ export const Body = styled.form`
   height: 660px;
   margin: 30px auto;
   padding: 60px 68px 40px;
-  gap: 70px;
-
-  border: 1px solid red;
 
   @media (max-width: 740px) {
     width: 100%;
@@ -67,4 +64,11 @@ export const Text = styled.div`
   color: #737373;
   color: ${({color}) => color};
   font-size: ${({size}) => size};
+`;
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
 `;

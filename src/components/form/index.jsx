@@ -7,6 +7,7 @@ import {
   Button,
   Text,
   TextLink,
+  Group
 } from "./styles/form";
 
 export default function CustomForm({children, ...restProps}) {
@@ -29,6 +30,10 @@ CustomForm.Button = function CustomFormButton({children, ...restProps}) {
   return <Button {...restProps}>{children}</Button>;
 };
 
+CustomForm.Group = function CustomFormGroup({children, ...restProps}) {
+  return <Group {...restProps}>{children}</Group>;
+};
+
 CustomForm.Text = function CustomFormText({
   children,
   size,
@@ -42,6 +47,15 @@ CustomForm.Text = function CustomFormText({
   );
 };
 
-CustomForm.TextLink = function CustomFormTextLink({children, size, color, ...restProps}) {
-  return <TextLink size={size} color={color} {...restProps}>{children}</TextLink>;
+CustomForm.TextLink = function CustomFormTextLink({
+  children,
+  size,
+  color,
+  ...restProps
+}) {
+  return (
+    <TextLink size={size} color={color} {...restProps}>
+      {children}
+    </TextLink>
+  );
 };

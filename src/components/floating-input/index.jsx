@@ -1,30 +1,34 @@
-import React, {useState} from "react";
-import {Container, Body, Input, Label, ErrorText} from "./styles/floating-input";
+import React from "react";
+import {
+  Container,
+  Body,
+  Input,
+  Label,
+  ErrorText,
+} from "./styles/floating-input";
 
 export default function FloatingInput({
   value,
   placeholder,
   width,
   height,
-  containerStyle,
-  labelStyle,
+  margin,
   isTouched,
   haveErrors,
+  className,
   ...restProps
 }) {
   return (
-    <Container>
-      <Body style={containerStyle} width={width} height={height}>
+    <Container margin={margin || '0'}>
+      <Body width={width} height={height}>
         <Input
           value={value}
           {...restProps}
-          className={haveErrors && isTouched ? "input-error" : ""}
+          className={`${haveErrors && isTouched ? "input-error" : ""} ${className}`}
         />
-        <Label className={value && "filled"} style={labelStyle}>
-          {placeholder}
-        </Label>
+        <Label isFilled={value ? true : false}>{placeholder}</Label>
       </Body>
-      {haveErrors && isTouched && <ErrorText>{haveErrors}</ErrorText>}
+      {haveErrors && isTouched && <ErrorText className={className}>{haveErrors}</ErrorText>}
     </Container>
   );
 }

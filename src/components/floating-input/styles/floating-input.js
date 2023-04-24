@@ -59,7 +59,7 @@ export const Input = styled.input`
     }
   }
 
-  // Media queries as per different classes
+  // Styles as per different classes
 
   &.opt-form {
     @media (max-width: 550px) {
@@ -71,6 +71,11 @@ export const Input = styled.input`
   &.sign-in-form {
     background-color: #333333;
     border: none;
+  }
+
+  &.sign-up-form {
+    color: black;
+    border-radius: 0;
   }
 `;
 
@@ -90,7 +95,7 @@ export const ErrorText = styled.p`
   color: red;
   font-size: 13px;
 
-  &.sign-in-form{
-    color: orange;
+  &.sign-in-form {
+    color:  #e87c03;
   }
 `;

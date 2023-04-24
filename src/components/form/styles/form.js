@@ -8,11 +8,12 @@ export const Body = styled.form`
   border-radius: 5px;
   width: 450px;
   height: 660px;
-  margin: 30px auto;
+  margin: 10px auto 100px;
   padding: 60px 68px 40px;
 
   @media (max-width: 740px) {
     width: 100%;
+    margin-bottom: 30px;
     padding: 5%;
     height: 500px;
   }
@@ -26,10 +27,12 @@ export const Title = styled.h1`
 `;
 
 export const Error = styled.div`
-  background-color: orange;
+  background-color:  #e87c03;
   color: white;
   padding: 15px;
   border-radius: 4px;
+  margin: 13px 0;
+
 `;
 
 export const CheckBox = styled.input``;

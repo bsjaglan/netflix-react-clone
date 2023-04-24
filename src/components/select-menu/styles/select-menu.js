@@ -1,8 +1,5 @@
 import styled from "styled-components/macro";
 
-export const Body = styled.div`
-  position: relative;
-`;
 export const Select = styled.div`
   border: 1px solid gray;
   border-radius: 4px;
@@ -53,7 +50,7 @@ export const DownArrowIcon = styled.img`
 `;
 
 export const Option = styled.div`
-  color: white;
+  color: #737373;
   padding-top: 3px;
   background-color: white;
   width: 100%;
@@ -61,5 +58,32 @@ export const Option = styled.div`
 
   &:hover {
     background: gray;
+    color: white;
+  }
+`;
+
+export const Body = styled.div`
+  position: relative;
+
+  // Different styles as per different classes
+  &.sign-up {
+    background-color: #ffffff;
+
+    ${Select} {
+      width: 136px;
+      height: 48px;
+      border-radius: 2px;
+    }
+
+    ${OptionList} {
+      top: 47px;
+    }
+    span {
+      color: #737373;
+      width: 100%;
+    }
+    img {
+      filter: invert(0);
+    }
   }
 `;

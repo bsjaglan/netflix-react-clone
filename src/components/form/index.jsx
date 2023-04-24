@@ -59,3 +59,7 @@ CustomForm.TextLink = function CustomFormTextLink({
     </TextLink>
   );
 };
+
+CustomForm.Error = function CustomFormError({error, ...restProps}) {
+  return <Error {...restProps}>{error}</Error>;
+};

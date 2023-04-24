@@ -1,10 +1,10 @@
 import React from "react";
 import {Container, Body, Section, SubSection, CustomLink} from "./styles/footer";
 
-export default function Footer({children, ...restProps}) {
+export default function Footer({color, children, ...restProps}) {
   return (
     <Container {...restProps}>
-      <Body >{children}</Body>
+      <Body color={color}>{children}</Body>
     </Container>
   );
 }

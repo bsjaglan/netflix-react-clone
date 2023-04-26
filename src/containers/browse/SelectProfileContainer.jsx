@@ -1,35 +1,32 @@
 import React from "react";
 import {Logo, Profiles} from "../../components";
+import {UserAuth} from "../../context/AuthContext";
 
-function SelectProfileContainer({user, setProfile}) {
+function SelectProfileContainer() {
+  const {setProfile, profileList} = UserAuth();
+
   return (
     <>
       <Logo size="medium" style={{margin: "2.5% 5% 5%"}} />
       <Profiles>
         <Profiles.Title>Who's watching?</Profiles.Title>
         <Profiles.List>
-          <Profiles.User
-            onClick={() =>
-              setProfile({
-                displayName: user.displayName,
-                photoURL: user.photoURL,
-              })
-            }
-          >
-            <Profiles.ProfileImage src={user.photoURL} />
-            <Profiles.Name>{user.displayName}</Profiles.Name>
-          </Profiles.User>
-          <Profiles.User
-            onClick={() =>
-              setProfile({
-                displayName: "Kids",
-                photoURL: "6",
-              })
-            }
-          >
-            <Profiles.ProfileImage src="6" />
-            <Profiles.Name>Kids</Profiles.Name>
-          </Profiles.User>
+
+          {profileList.map((item) => (
+            <Profiles.User
+              key={item.id}
+              onClick={() =>
+                setProfile({
+                  displayName: item.displayName,
+                  photoURL: item.photoURL,
+                })
+              }
+            >
+              <Profiles.ProfileImage src={item.photoURL} />
+              <Profiles.Name>{item.displayName}</Profiles.Name>
+            </Profiles.User>
+          ))}
+          
         </Profiles.List>
         <Profiles.Button>Manage profiles</Profiles.Button>
       </Profiles>

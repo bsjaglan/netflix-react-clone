@@ -2,10 +2,10 @@ import React from 'react'
 import {Header} from '../../components'
 import {NavbarContainer} from './'
 
-function HeaderContainer({profile}) {
+function HeaderContainer() {
   return (
     <Header>
-        <NavbarContainer profile={profile} />
+        <NavbarContainer />
 
     </Header>
   )

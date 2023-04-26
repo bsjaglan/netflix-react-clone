@@ -3,7 +3,8 @@ import {Logo, Navbar} from "../../components";
 import navOptions from "../../data/navOptions.json";
 import ProfileDropdownContainer from "./ProfileDropdownContainer";
 
-function NavbarContainer({profile}) {
+
+function NavbarContainer() {
   const [scrolled, setScrolled] = useState(false);
 
   // by default home is clicked i.e. id = 1
@@ -45,7 +46,7 @@ function NavbarContainer({profile}) {
       <Navbar.Group>
         <Navbar.TextLink>Kids</Navbar.TextLink>
         <Navbar.NotificationIcon />
-        <ProfileDropdownContainer profile={profile} />
+        <ProfileDropdownContainer />
       </Navbar.Group>
     </Navbar>
   );

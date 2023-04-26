@@ -5,10 +5,7 @@ import {Loading} from "../components";
 import {UserAuth} from "../context/AuthContext";
 
 export default function Browse() {
-  const {user} = UserAuth();
-
-  // profiles to be selected via SelectProfileContainer to show on Browse Navebar
-  const [profile, setProfile] = useState({});
+  const {profile} = UserAuth();
 
   // by default loading is true   
   const [loading, setLoading] = useState(true); 
@@ -25,13 +22,13 @@ export default function Browse() {
   // if profile is not selected, show SelectProfileContainer else show browse page content
 
   !profile.displayName ? 
-  (<SelectProfileContainer user={user} setProfile={setProfile} />) :
+  (<SelectProfileContainer />) :
   (<>
       {
         // lets handle loading by locking and relasing body and showing selected profile in a spinner
-        loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />
+        loading ? <Loading src={profile.photoURL} /> : <Loading.ReleaseBody />
       }
-      <HeaderContainer profile={profile}/>
+      <HeaderContainer />
       <div style={{height: '1000px'}}></div>
       
 

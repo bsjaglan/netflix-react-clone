@@ -1,11 +1,10 @@
 import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const Body = styled.div`
   display: flex;
   position: fixed;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
   gap: 20px;
   padding: 12px 5%;
   align-items: center;
@@ -49,8 +48,6 @@ export const Group = styled.div`
     justify-content: right;
     gap: 20px;
   }
-
-
 `;
 
 export const NotificationIcon = styled.img`

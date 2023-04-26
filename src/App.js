@@ -5,9 +5,9 @@ import {ROUTES} from "./constants/routes";
 import {ProtectedRoute, LoggedInRedirect} from "./helpers/ProtectedRoute";
 
 function App() {
+  
   return (
     <BrowserRouter>
-    
       <Routes>
         {/* home route will be redirected to browser if user is logged in */}
         <Route
@@ -34,7 +34,6 @@ function App() {
 
         {/* sign up route */}
         <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
-
       </Routes>
     </BrowserRouter>
   );

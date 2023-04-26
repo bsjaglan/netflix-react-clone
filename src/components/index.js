@@ -12,3 +12,4 @@ export {default as Profiles} from "./profiles";
 export {default as Loading} from "./loading";
 export {default as Navbar} from "./navbar";
 export {default as HoverDropdown} from "./hover-dropdown";
+export {default as Feature} from "./feature";

@@ -31,10 +31,12 @@ HoverDropdown.SelectedItem = function HoverDropdownSelectedItem({
 HoverDropdown.OptionsList = function HoverDropdownOptionsList({
   children,
   arrowLeftPosition,
+  top,
+  left,
   ...restProps
 }) {
   return (
-    <OptionsList {...restProps}>
+    <OptionsList top={top} left={left} {...restProps}>
       <UpArrowIcon
         arrowLeftPosition={arrowLeftPosition}
         src="images/icons/up-arrow.png"

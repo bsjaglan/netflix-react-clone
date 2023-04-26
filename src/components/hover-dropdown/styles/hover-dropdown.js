@@ -7,6 +7,9 @@ export const UserPicture = styled.img`
 
 export const UserName = styled.h3`
   color: white;
+  &: hover {
+    text-decoration: underline;
+  }
 `;
 
 export const SignOutBtn = styled.div`
@@ -42,8 +45,11 @@ export const OptionsList = styled.div`
   left: -200px;
   width: 300px;
 
+  top: ${({top}) => top};
+  left: ${({left}) => left};
+
   // transparetn padding to keep this overlping with Body
-  // to keep hover state ON Body to OptionsList 
+  // to keep hover state ON Body to OptionsList
   padding: 20px;
 
   visibility: hidden;
@@ -52,8 +58,9 @@ export const OptionsList = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid gray;
+  border: 0.5px solid gray;
   background: rgb(0, 0, 0, 0.8);
+  cursor: pointer;
 `;
 
 export const Item = styled.div`

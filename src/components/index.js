@@ -8,3 +8,7 @@ export {default as OptForm} from "./opt-form";
 export {default as Footer} from "./footer";
 export {default as SelectMenu} from "./select-menu";
 export {default as CustomForm} from "./form";
+export {default as Profiles} from "./profiles";
+export {default as Loading} from "./loading";
+export {default as Navbar} from "./navbar";
+export {default as HoverDropdown} from "./hover-dropdown";

@@ -4,7 +4,7 @@ import {
   HeaderContainer,
   JumbotronContainer,
   AccordionContainer,
-  FooterContainer,
+  FooterContainer, 
 } from "../containers/home/";
 
 function Home() {

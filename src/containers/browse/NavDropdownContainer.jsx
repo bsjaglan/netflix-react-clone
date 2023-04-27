@@ -10,7 +10,9 @@ function NavDropdownContainer({clicked, setClicked}) {
         {navOptions.map(
           (item) =>
             item.id === clicked && (
-              <Navbar.TextLink className="active">{item.text}</Navbar.TextLink>
+              <Navbar.TextLink className="active" key={item.id}>
+                {item.text}
+              </Navbar.TextLink>
             )
         )}
       </HoverDropdown.SelectedItem>
@@ -22,11 +24,10 @@ function NavDropdownContainer({clicked, setClicked}) {
         left="-113px"
       >
         {navOptions.map((item) => (
-          <HoverDropdown.Item>
+          <HoverDropdown.Item style={{justifyContent: "center"}}>
             <Navbar.TextLink
               key={item.id}
               onClick={() => setClicked(item.id)}
-              style={{justifyContent: "center"}}
               className={clicked === item.id && "active"}
             >
               {item.text}

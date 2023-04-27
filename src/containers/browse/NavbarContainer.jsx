@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
+
 import {Logo, Navbar} from "../../components";
 import navOptions from "../../data/navOptions.json";
 import ProfileDropdownContainer from "./ProfileDropdownContainer";
 import NavDropdownContainer from "./NavDropdownContainer";
+
 
 function NavbarContainer() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,6 +40,7 @@ function NavbarContainer() {
       window.removeEventListener("resize", handleWidth);
     };
   }, []);
+
 
   return (
     <Navbar className={scrolled && "black-bg"}>

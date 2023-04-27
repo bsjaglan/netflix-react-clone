@@ -1,5 +1,5 @@
-export {default as SelectProfileContainer} from "./SelectProfileContainer";
-export {default as HeaderContainer} from "./HeaderContainer";
-export {default as NavbarContainer} from "./NavbarContainer";
-
-
+export { default as HeaderContainer} from './HeaderContainer'
+export { default as NavbarContainer} from './NavbarContainer'
+export { default as RowContainer} from './RowContainer'
+export { default as SelectProfileContainer} from './SelectProfileContainer'
+export { default as SlidesContainer} from './SlidesContainer'

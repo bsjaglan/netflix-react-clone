@@ -13,7 +13,7 @@ function HeaderContainer() {
       <NavbarContainer />
       <Feature>
         <Feature.Title>
-          {randomMovie.title || randomMovie.name || randomMovie.original_name}
+          {randomMovie?.title || randomMovie?.name || randomMovie?.original_name}
         </Feature.Title>
         <Feature.Buttons>
           <Feature.PlayButton>Play</Feature.PlayButton>

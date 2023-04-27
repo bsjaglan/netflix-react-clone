@@ -18,7 +18,7 @@ export const Body = styled.div`
 export const TextLink = styled(Link)`
   text-decoration: none;
   margin-right: 13px;
-  transition: 0.5s;
+  // transition: 0.15s;
   color: rgb(255, 255, 255, 0.6);
 
   &: hover {
@@ -33,9 +33,9 @@ export const TextLink = styled(Link)`
     color: white;
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 1000px) and (min-width: 900px) {
     font-size: 12px;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 `;
 

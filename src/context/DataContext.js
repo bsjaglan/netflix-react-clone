@@ -9,9 +9,16 @@ export const DataContextProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
   const [randomMovie, setRandomMovie] = useState();
   const [moviesByGenre, setMoviesByGenre] = useState([]);
+  const [top10Movies, setTop10Movies] = useState([]);
 
   const getRandomMovie = (movieList) =>
     movieList[Math.floor(Math.random() * movieList.length) + 1];
+
+  const get10Movies = (movieList) => {
+    if (movieList.length > 10) {
+      return movieList.slice(0, 10)
+    }
+  }
 
   const handleAllResponses = (responses) => {
     console.log(responses);
@@ -31,6 +38,7 @@ export const DataContextProvider = ({children}) => {
         });
         setLoading(false);
         setRandomMovie(getRandomMovie(data[0].items));
+        setTop10Movies(get10Movies(data[4].items));
         return setMoviesByGenre(data);
       })
     );
@@ -41,7 +49,7 @@ export const DataContextProvider = ({children}) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{moviesByGenre, randomMovie, loading}}>
+    <DataContext.Provider value={{moviesByGenre, randomMovie, loading, top10Movies}}>
       {children}
     </DataContext.Provider>
   );

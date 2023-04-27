@@ -2,6 +2,7 @@ import React from "react";
 import {
   Body,
   Poster,
+  Rank,
   HoverCard,
   HoverPoster,
   HoverButtons,
@@ -25,6 +26,10 @@ export default function Card({children, ...restProps}) {
 
 Card.Poster = function CardPoster({...restProps}) {
   return <Poster {...restProps} />;
+};
+
+Card.Rank = function CardRank({rank, ...restProps}) {
+  return <Rank src={`images/ranks/rank-${rank}.png`} {...restProps} />;
 };
 
 Card.HoverCard = function CardHoverCard({children, ...restProps}) {

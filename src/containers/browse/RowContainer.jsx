@@ -1,13 +1,14 @@
 import React from "react";
 import {Row, Card} from "../../components";
-import {genreIds} from '../../data/tmdbEndpoints'
-function RowContainer({title, items}) {
+import {genreIds} from "../../data/tmdbEndpoints";
+function RowContainer({title, items, rankRow}) {
   return (
     <Row>
       <Row.Title>{title}</Row.Title>
       <Row.ItemList>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <Card key={item.id}>
+            {rankRow && <Card.Rank rank={index + 1} />}
             <Card.Poster
               src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
             />

@@ -18,7 +18,7 @@ export const HoverCard = styled.div`
 `;
 export const Body = styled.div`
   position: relative;
-  width: 165px;
+  display: flex;
   padding: 10px;
   height: 350px;
   padding-top: 80px;
@@ -110,7 +110,14 @@ export const HoverDetails2 = styled.ul`
 
 export const Poster = styled.img`
   z-index: -1;
-  width: 150px;
+  width: 170px;
+  object: contain;
+  cursor: pointer;
+`;
+
+export const Rank = styled.img`
+  z-index: -1;
+  width: 130px;
   object: contain;
   cursor: pointer;
 `;

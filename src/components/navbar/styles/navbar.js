@@ -56,3 +56,49 @@ export const NotificationIcon = styled.img`
   filter: invert(1);
   cursor: pointer;
 `;
+
+export const SearchInput = styled.input`
+  background-color: transparent;
+  color: white;
+  border: 0;
+  outline: 0;
+  transition: width 0.5s;
+  height: 30px;
+  font-size: 14px;
+  padding-right: ${({active}) => (active === true ? "5px" : "0")};
+  opacity: ${({active}) => (active === true ? "1" : "0")};
+  width: ${({active}) => (active === true ? "200px" : "0px")};
+
+  @media (max-width: 700px) {
+    width: ${({active}) => (active === true ? "120px" : "0px")};
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+`;
+
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+  border: ${({active}) => (active === true ? "1px solid white" : "none")};
+
+  background: ${({active}) =>
+    active === true ? "rgba(0, 0, 0, 0.8)" : "none"};
+`;
+
+export const SearchIcon = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`;

@@ -5,15 +5,14 @@ import navOptions from "../../data/navOptions.json";
 import ProfileDropdownContainer from "./ProfileDropdownContainer";
 import NavDropdownContainer from "./NavDropdownContainer";
 
-
 function NavbarContainer() {
   const [scrolled, setScrolled] = useState(false);
 
   // by default home is clicked i.e. id = 1
   const [clicked, setClicked] = useState(1);
 
-  // by default nav option dropdown is hidden OR showDropdown is false
-  const [showDropdown, setShowDropdown] = useState(false);
+  // can be used as media query to show some items or change sizes
+  const [width, setWidth] = useState();
 
   // set scrolled true if we scroll > 60 along y-axis
   const handleScroll = () => {
@@ -22,12 +21,7 @@ function NavbarContainer() {
   };
 
   // set width true when media width is less than 800
-  const handleWidth = () => {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 900) {
-      return setShowDropdown(true);
-    } else return setShowDropdown(false);
-  };
+  const handleWidth = () => setWidth(window.innerWidth);
 
   // add event listener to handle scroll and resize
   useEffect(() => {
@@ -41,12 +35,11 @@ function NavbarContainer() {
     };
   }, []);
 
-
   return (
     <Navbar className={scrolled && "black-bg"}>
-      <Logo size="medium" />
+      <Logo size={width > 900 ? "medium" : "100px"} />
 
-      {showDropdown ? (
+      {width < 900 ? (
         <NavDropdownContainer clicked={clicked} setClicked={setClicked} />
       ) : (
         <Navbar.Group>
@@ -64,7 +57,8 @@ function NavbarContainer() {
       )}
 
       <Navbar.Group>
-        <Navbar.TextLink>Kids</Navbar.TextLink>
+        <Navbar.Search />
+        {width > 500 && <Navbar.TextLink>Kids</Navbar.TextLink>}
         <Navbar.NotificationIcon />
         <ProfileDropdownContainer />
       </Navbar.Group>

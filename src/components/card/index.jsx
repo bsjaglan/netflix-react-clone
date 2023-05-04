@@ -18,6 +18,7 @@ import {
   PictureQuality,
   ListItem,
   ListText,
+  HoverMostLikeButton,
 } from "./styles/card";
 
 export default function Card({children, ...restProps}) {
@@ -56,25 +57,26 @@ Card.HoverPlayButton = function CardHoverPlayButton({...restProps}) {
   );
 };
 
-Card.HoverAddButton = function CardHoverAddButton({...restProps}) {
+
+Card.HoverAddButton = function CardHoverAddButton({size, ...restProps}) {
   return (
-    <HoverAddButton {...restProps}>
+    <HoverAddButton size={size} {...restProps}>
       <img src="images/icons/add.png" />
     </HoverAddButton>
   );
 };
 
-Card.HoverLikeButton = function CardHoverLikeButton({...restProps}) {
+Card.HoverLikeButton = function CardHoverLikeButton({size, ...restProps}) {
   return (
-    <HoverLikeButton {...restProps}>
+    <HoverLikeButton size={size} {...restProps}>
       <img src="images/icons/thumb-up.png" />
     </HoverLikeButton>
   );
 };
 
-Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({...restProps}) {
+Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({ ...restProps}) {
   return (
-    <HoverMoreInfoButton {...restProps}>
+    <HoverMoreInfoButton { ...restProps}>
       <img src="images/icons/forward.png" />
     </HoverMoreInfoButton>
   );
@@ -107,4 +109,13 @@ Card.Duration = function CardDuration({children, ...restProps}) {
 };
 Card.PictureQuality = function CardPictureQuality({children, ...restProps}) {
   return <PictureQuality {...restProps}>{children}</PictureQuality>;
+};
+
+
+Card.HoverMostLikeButton = function CardHoverMostLikeButton({size, ...restProps}) {
+  return (
+    <HoverMostLikeButton size={size} {...restProps}>
+      <img src="images/icons/black-thumb-only.png" />
+    </HoverMostLikeButton>
+  );
 };

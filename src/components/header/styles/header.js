@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 const defaultImg = `images/header/header-background.jpg`;
 
 const handleBg = (src, gradient) =>
-  src || (defaultImg && gradient)
+  src && (defaultImg && gradient)
     ? `linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8) 0,
@@ -17,6 +17,8 @@ export const Body = styled.div`
   width: 100%;
   aspect-ratio: 16/9;
 
+  postion: relative;
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -27,11 +29,30 @@ export const Body = styled.div`
     background-size: cover;
     height: 95vh;
     border-bottom: 8px solid #222;
+  }  
+
+  &.browse {
+    margin-bottom: -70px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(20, 20, 20, 0));
   }
+
+  &.portal-card {
+    margin-bottom: -20px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(20, 20, 20, 0));
+
+  }
+
+  &.more-like-this-card {
+    height: auto;
+   }
 
   @media (min-width: 1080px) {
     background-size: cover;
     height: 95vh;
+    
+    &.portal-card {
+      height: auto;
+    }
   }
 `;
 

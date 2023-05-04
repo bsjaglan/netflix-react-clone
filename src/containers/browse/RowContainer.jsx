@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Row, Card} from "../../components";
 import {genreIds} from "../../data/tmdbEndpoints";
+import PortalCardContainer from "./PortalCardContainer";
+
 function RowContainer({title, items, rankRow}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [portalItem, setPortalItem] = useState();
+
   return (
     <Row>
       <Row.Title>{title}</Row.Title>
@@ -20,7 +25,17 @@ function RowContainer({title, items, rankRow}) {
                 <Card.HoverPlayButton />
                 <Card.HoverAddButton />
                 <Card.HoverLikeButton />
-                <Card.HoverMoreInfoButton />
+                <Card.HoverMoreInfoButton
+                  onClick={() => {
+                    setIsOpen(true);
+                    setPortalItem(item);
+                  }}
+                />
+                <PortalCardContainer
+                  item={portalItem}
+                  isOpen={isOpen}
+                  onClose={() => setIsOpen(false)}
+                />
               </Card.HoverButtons>
 
               <Card.HoverDetails1>

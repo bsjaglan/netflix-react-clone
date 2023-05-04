@@ -1,10 +1,17 @@
 import styled from "styled-components/macro";
 
 export const Body = styled.div`
-  padding: 25% 5% 20px;
-  display: flex;
+  padding: 22% 5% 20px;
+  display: flex;  
   flex-direction: column;
   width: 100%;
+
+  position: absolute;
+  top: 0;
+
+  &.portal-card {
+    padding: 30% 5% 20px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -14,7 +21,7 @@ export const Title = styled.h1`
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
   margin: 0;
-
+ 
   @media (max-width: 740px) {
     font-size: 28px;
   }
@@ -31,7 +38,6 @@ export const PlayButton = styled.button`
   border-radius: 5px;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.5s ease;
 
@@ -68,4 +74,6 @@ export const Buttons = styled.div`
   gap: 10px;
   width: 100%;
   min-width: 150px;
+  align-items: center;
+  margin-top: 20px;
 `;

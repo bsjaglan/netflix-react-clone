@@ -8,7 +8,7 @@ export const HoverCard = styled.div`
   width: 300px;
   background: #141414;
   flex-direction: column;
-  z-index: 10;
+  z-index: 1;
   transition: 0s visibility;
   box-shadow: 0px 3px 8px 3px rgba(0, 0, 0, 0.94);
 
@@ -39,8 +39,9 @@ export const HoverPlayButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  min-width: 35px;
+  min-height: 35px;
+
   border-radius: 50%;
   overflow: hidden;
   padding-left: 3px;
@@ -62,13 +63,16 @@ export const HoverAddButton = styled(HoverPlayButton)`
   border: 2px solid gray;
   background: #141414;
   padding: 0;
+  width: ${({size}) => size};
+  height: ${({size}) => size};
 
-  & img {
-    width: 20px;
-    height: 20px;
+  img {
+    width: 70%;
+    height: 70%;
     filter: invert(0);
   }
-  &:hover {
+
+  :hover {
     opacity: 1;
     border: 2px solid white;
   }
@@ -79,17 +83,30 @@ export const HoverButtons = styled.div`
   padding: 10px;
   gap: 5px;
 
-  & button:last-of-type {
+  button:last-of-type {
     margin-left: 125px;
   }
 `;
 
 export const HoverLikeButton = styled(HoverAddButton)``;
 
+export const HoverMostLikeButton = styled.div`
+  display: flex;
+  padding: 2px;
+
+  background-color: red;
+  width: ${({size}) => size || "25px"};
+  height: ${({size}) => size || "25px"};
+  border-radius: 2px;
+
+  img {
+    filter: invert(1);
+  }
+`;
+
 export const HoverMoreInfoButton = styled(HoverAddButton)`
+
   & img {
-    width: 15px;
-    height: 15px;
     transform: rotate(90deg);
   }
 `;
@@ -133,7 +150,7 @@ export const Match = styled.div`
 `;
 export const Maturity = styled.div`
   border: 1px solid gray;
-  padding: 2px 5px;
+  padding: 2px 5px;  
 `;
 export const Duration = styled.div``;
 export const PictureQuality = styled.div`

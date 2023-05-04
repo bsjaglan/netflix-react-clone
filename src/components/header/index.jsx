@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Body,
+  Fade,
   DarkFilter,
   Section,
   Title,

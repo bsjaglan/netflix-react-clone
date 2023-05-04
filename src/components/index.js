@@ -15,3 +15,5 @@ export {default as HoverDropdown} from "./hover-dropdown";
 export {default as Feature} from "./feature";
 export {default as Row} from "./row";
 export {default as Card} from "./card";
+export {default as PortalCard} from "./portal-card";
+export {default as MoreLikeThis} from "./more-like-this";

@@ -1,10 +1,8 @@
 import React from "react";
 import {PortalCard, Card} from "../../../components";
-import {genreIds} from "../../../data/tmdbEndpoints";
 import {castList, thisMovieIsList} from "../../../data/sampleData";
-
-function TopInfoContainer({item}) { 
-
+import {getGenreFromIDs} from "../../../helpers/getGenre";
+function TopInfoContainer({item}) {
   return (
     <PortalCard.TopInfoSection>
       {/* left container in TopInfoSection */}
@@ -43,17 +41,11 @@ function TopInfoContainer({item}) {
         {/* line 2 - genere info */}
         <PortalCard.Group style={{flexWrap: "wrap", gap: "2px"}}>
           <PortalCard.Text className="title">Genre: </PortalCard.Text>
-          {item?.genre_ids?.map((id) =>
-            genreIds.map(
-              (obj) =>
-                id === obj.id && (
-                  <PortalCard.TextLink key={id}>
-                    {obj.name}
-                    {", "}
-                  </PortalCard.TextLink>
-                )
-            )
-          )}
+          {getGenreFromIDs(item?.genre_ids).map((genre) => (
+            <PortalCard.TextLink key={genre.id}>
+              {genre.name + ", "}
+            </PortalCard.TextLink>
+          ))}
         </PortalCard.Group>
 
         {/* line 3 - this is movie is info */}

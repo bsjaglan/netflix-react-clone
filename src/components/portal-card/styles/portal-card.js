@@ -7,7 +7,7 @@ export const Body = styled.div`
   left: 0;
   right: 0;
 
-  height: 95vh;
+  height: 94vh;
 
   margin-left: auto;
   margin-right: auto;

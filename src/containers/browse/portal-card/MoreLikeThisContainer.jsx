@@ -6,6 +6,13 @@ import {
   randomNum,
   truncateString,
 } from "../../../helpers/extras";
+import {
+  BottomSection,
+  CardDetails,
+  TopLeftSection,
+  TopRightSection,
+  TopSection,
+} from "./moreLikeThisContainerStyles";
 
 function MoreLikeThisContainer() {
   const {moviesByGenre} = useData();
@@ -16,51 +23,36 @@ function MoreLikeThisContainer() {
       <MoreLikeThis.ItemList>
         {moviesByGenre[1].items?.map((item) => (
           <MoreLikeThis.Card>
-            {/* --------------------- header conatiner ------------------- */}
-
             <Header
               className="more-like-this-card"
               src={`https://image.tmdb.org/t/p/original${item?.backdrop_path}`}
             />
             <MoreLikeThis.PlayBtn />
 
-            {/* --------------------- information main container ------------------- */}
-            <MoreLikeThis.Group style={{padding: "16px"}}>
-              {/* top group */}
-              <MoreLikeThis.Group>
-                {/* top left group */}
-                <MoreLikeThis.Group
-                  style={{gap: "10px", alignItems: "center", width: "55%"}}
-                >
+            <CardDetails>
+              <TopSection>
+                <TopLeftSection>
                   <Card.Match>{randomNum(20, 98)}% Match</Card.Match>
                   <Card.Maturity>
                     {randomMaturity(["TV-MA", "PG-13", "R"])}
                   </Card.Maturity>
                   <PortalCard.Text>{randomNum(2010, 2023)}</PortalCard.Text>
-                </MoreLikeThis.Group>
+                </TopLeftSection>
 
-                {/* top right group  */}
-                <MoreLikeThis.Group
-                  style={{
-                    alignItems: "center",
-                    width: "45%",
-                    justifyContent: "right",
-                  }}
-                >
+                <TopRightSection>
                   <Card.HoverAddButton
                     size="30px"
                     style={{backgroundColor: "#2f2f2f"}}
                   />
-                </MoreLikeThis.Group>
-              </MoreLikeThis.Group>
+                </TopRightSection>
+              </TopSection>
 
-              {/* bottom container - overview */}
-              <MoreLikeThis.Group style={{margin: "20px 0"}}>
+              <BottomSection>
                 <PortalCard.Text>
                   {truncateString(item.overview, 170)}
                 </PortalCard.Text>
-              </MoreLikeThis.Group>
-            </MoreLikeThis.Group>
+              </BottomSection>
+            </CardDetails>
           </MoreLikeThis.Card>
         ))}
       </MoreLikeThis.ItemList>

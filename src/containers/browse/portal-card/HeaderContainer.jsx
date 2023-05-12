@@ -8,8 +8,8 @@ function HeaderContainer({item}) {
         className="portal-card"
         src={`https://image.tmdb.org/t/p/original${item?.backdrop_path}`}
       />
-      <Feature className="portal-card">
-        <Feature.Title style={{fontSize: "40x"}}>
+      <Feature>
+        <Feature.Title >
           {item?.title || item?.name || item?.original_name}
         </Feature.Title>
         <Feature.Buttons>

@@ -2,33 +2,40 @@ import styled from "styled-components/macro";
 
 export const HoverCard = styled.div`
   visibility: hidden;
+  transition: 0s visibility;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   top: 38px;
   left: -75px;
+
   width: 300px;
   background: #141414;
-  flex-direction: column;
-  z-index: 1;
-  transition: 0s visibility;
   box-shadow: 0px 3px 8px 3px rgba(0, 0, 0, 0.94);
 
-  &:first-of-type {
+  // to position the first hover card properly
+  :first-of-type {
     left: -20px;
   }
 `;
+
 export const Body = styled.div`
   position: relative;
+
   display: flex;
-  padding: 10px;
+
   height: 350px;
-  padding-top: 80px;
+  padding: 80px 10px 10px;
 
   &:first-of-type {
     margin-left: 5%;
   }
 
-  &:hover ${HoverCard} {
-    display: flex;
+  // on hover body show hover card with delay
+  :hover ${HoverCard} {
     cursor: pointer;
     visibility: visible;
     transition-delay: 1.5s;
@@ -39,32 +46,33 @@ export const HoverPlayButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 35px;
-  min-height: 35px;
 
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  overflow: hidden;
   padding-left: 3px;
+
+  overflow: hidden;
   cursor: pointer;
   border: none;
 
-  & img {
-    width: 15px;
-    height: 15px;
-    object: contain;
+  img {
+    width: 40%;
+    height: 40%;
   }
 
-  &:hover {
+  :hover {
     opacity: 0.8;
   }
 `;
 
 export const HoverAddButton = styled(HoverPlayButton)`
   border: 2px solid gray;
-  background: #141414;
+  background: ${({color}) => color || "#2a2a2a99"};
+
   padding: 0;
-  width: ${({size}) => size};
-  height: ${({size}) => size};
+  width: ${({size}) => size || "35px"};
+  height: ${({size}) => size || "35px"};
 
   img {
     width: 70%;
@@ -88,13 +96,18 @@ export const HoverButtons = styled.div`
   }
 `;
 
-export const HoverLikeButton = styled(HoverAddButton)``;
+export const HoverLikeButton = styled(HoverAddButton)`
+img {
+  filter: invert(1);
+}
+`;
 
 export const HoverMostLikeButton = styled.div`
   display: flex;
-  padding: 2px;
 
   background-color: red;
+
+  padding: 2px;
   width: ${({size}) => size || "25px"};
   height: ${({size}) => size || "25px"};
   border-radius: 2px;
@@ -105,8 +118,7 @@ export const HoverMostLikeButton = styled.div`
 `;
 
 export const HoverMoreInfoButton = styled(HoverAddButton)`
-
-  & img {
+  img {
     transform: rotate(90deg);
   }
 `;
@@ -150,7 +162,7 @@ export const Match = styled.div`
 `;
 export const Maturity = styled.div`
   border: 1px solid gray;
-  padding: 2px 5px;  
+  padding: 2px 5px;
 `;
 export const Duration = styled.div``;
 export const PictureQuality = styled.div`
@@ -163,7 +175,7 @@ export const PictureQuality = styled.div`
 export const ListItem = styled.li`
   color: gray;
 
-  &:first-of-type {
+  :first-of-type {
     list-style-type: none;
   }
 `;

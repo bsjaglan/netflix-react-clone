@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Row, Card} from "../../components";
-import {genreIds} from "../../data/tmdbEndpoints";
 import PortalCardContainer from "./PortalCardContainer";
+import {getGenreFromIDs} from "../../helpers/getGenre";
 
 function RowContainer({title, items, rankRow}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,14 +46,9 @@ function RowContainer({title, items, rankRow}) {
               </Card.HoverDetails1>
 
               <Card.HoverDetails2>
-                {item?.genre_ids?.map((id) =>
-                  genreIds.map(
-                    (obj) =>
-                      id === obj.id && (
-                        <Card.ListItem key={id}>{obj.name}</Card.ListItem>
-                      )
-                  )
-                )}
+                {getGenreFromIDs(item?.genre_ids).map((genre) => (
+                  <Card.ListItem key={genre.id}>{genre.name}</Card.ListItem>
+                ))}
               </Card.HoverDetails2>
             </Card.HoverCard>
           </Card>

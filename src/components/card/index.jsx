@@ -45,6 +45,8 @@ Card.HoverPoster = function CardHoverPoster({...restProps}) {
   return <HoverPoster {...restProps} />;
 };
 
+// ------------------------- all card buttons  -------------------------
+
 Card.HoverButtons = function CardHoverButtons({children, ...restProps}) {
   return <HoverButtons {...restProps}>{children}</HoverButtons>;
 };
@@ -57,30 +59,46 @@ Card.HoverPlayButton = function CardHoverPlayButton({...restProps}) {
   );
 };
 
-
-Card.HoverAddButton = function CardHoverAddButton({size, ...restProps}) {
+Card.HoverAddButton = function CardHoverAddButton({size, color, ...restProps}) {
   return (
-    <HoverAddButton size={size} {...restProps}>
+    <HoverAddButton size={size} color={color} {...restProps}>
       <img src="images/icons/add.png" />
     </HoverAddButton>
   );
 };
 
-Card.HoverLikeButton = function CardHoverLikeButton({size, ...restProps}) {
+Card.HoverLikeButton = function CardHoverLikeButton({
+  size,
+  color,
+  ...restProps
+}) {
   return (
-    <HoverLikeButton size={size} {...restProps}>
+    <HoverLikeButton size={size} color={color} {...restProps}>
       <img src="images/icons/thumb-up.png" />
     </HoverLikeButton>
   );
 };
 
-Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({ ...restProps}) {
+Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({...restProps}) {
   return (
-    <HoverMoreInfoButton { ...restProps}>
+    <HoverMoreInfoButton {...restProps}>
       <img src="images/icons/forward.png" />
     </HoverMoreInfoButton>
   );
 };
+
+Card.HoverMostLikeButton = function CardHoverMostLikeButton({
+  size,
+  ...restProps
+}) {
+  return (
+    <HoverMostLikeButton size={size} {...restProps}>
+      <img src="images/icons/black-thumb-only.png" />
+    </HoverMostLikeButton>
+  );
+};
+
+// -------------------- card divs for details ---------------------------------
 
 Card.HoverDetails1 = function CardHoverDetails1({children, ...restProps}) {
   return <HoverDetails1 {...restProps}>{children}</HoverDetails1>;
@@ -98,6 +116,8 @@ Card.ListItem = function CardListItem({children, ...restProps}) {
   );
 };
 
+// ------------------------- different info blocks on card -------------------------------
+
 Card.Match = function CardMatch({children, ...restProps}) {
   return <Match {...restProps}>{children}</Match>;
 };
@@ -109,13 +129,4 @@ Card.Duration = function CardDuration({children, ...restProps}) {
 };
 Card.PictureQuality = function CardPictureQuality({children, ...restProps}) {
   return <PictureQuality {...restProps}>{children}</PictureQuality>;
-};
-
-
-Card.HoverMostLikeButton = function CardHoverMostLikeButton({size, ...restProps}) {
-  return (
-    <HoverMostLikeButton size={size} {...restProps}>
-      <img src="images/icons/black-thumb-only.png" />
-    </HoverMostLikeButton>
-  );
 };

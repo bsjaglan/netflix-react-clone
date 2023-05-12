@@ -3,40 +3,50 @@ import styled from "styled-components/";
 
 export const Body = styled.div`
   position: absolute;
+  // top postion depends on the scroll position of browse page
+  // add extra 40px for margin
   top: ${({top}) => `${Math.ceil(top) + 40}px`};
   left: 0;
   right: 0;
 
+  // perfect height to show enough portal card
   height: 94vh;
 
+  // center horizontally
   margin-left: auto;
   margin-right: auto;
+
   max-width: 850px;
+  border-radius: 10px;
+
   background-color: #141414;
   z-index: 10;
-  border-radius: 10px;
   overflow-y: scroll;
 
-  &::-webkit-scrollbar {
+  // hide the scroll bar
+  ::-webkit-scrollbar {
     display: none;
   }
 
+  //  lets give usual margin of 5%
   @media (max-width: 900px) {
     margin: auto 5%;
   }
 `;
 
 export const Overlay = styled.div`
-  position: fixed;
+  display: flex;
+  justify-content: center;
   height: 100vh;
+
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
   background-color: rgba(0, 0, 0, 0.05);
   z-index: 10;
-  display: flex;
-  justify-content: center;
 `;
 
 export const CloseButton = styled.div`

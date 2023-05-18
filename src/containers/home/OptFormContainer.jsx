@@ -12,7 +12,6 @@ import {OptForm, FloatingInput} from "../../components";
 
 function OptFormContainer() {
   const onSubmit = (values, action) => {
-    console.log(values.email);
   };
 
   const {values, errors, touched, handleBlur, handleChange, handleSubmit} =

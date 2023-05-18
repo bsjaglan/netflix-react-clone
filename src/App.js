@@ -5,12 +5,12 @@ import {ROUTES} from "./constants/routes";
 import {ProtectedRoute, LoggedInRedirect} from "./helpers/ProtectedRoute";
 
 function App() {
-  
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* home route will be redirected to browser if user is logged in */}
         <Route
+          exact
           path={ROUTES.HOME}
           element={
             <LoggedInRedirect redirectTo={ROUTES.BROWSE}>
@@ -20,10 +20,11 @@ function App() {
         />
 
         {/* sign in route */}
-        <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
+        <Route exact path={ROUTES.SIGN_IN} element={<SignIn />} />
 
         {/* browser route is protected, client will be redirected to sign in if user is not singed in */}
         <Route
+          exact
           path={ROUTES.BROWSE}
           element={
             <ProtectedRoute redirectTo={ROUTES.SIGN_IN}>
@@ -33,7 +34,7 @@ function App() {
         />
 
         {/* sign up route */}
-        <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
+        <Route exact path={ROUTES.SIGN_UP} element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

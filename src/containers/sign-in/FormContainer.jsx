@@ -20,7 +20,7 @@ function FormContainer() {
   const onSubmit = (values) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((user) => {
-        console.log("Login Successful." + JSON.stringify(user));
+        console.log("Login Successful.");
         navigate(ROUTES.BROWSE);
       })
       .catch((error) => setError(handleError(error)));

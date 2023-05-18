@@ -15,7 +15,8 @@ export const LoggedInRedirect = ({children, redirectTo}) => {
   const {user} = UserAuth();
 
   if (user) {
-    return <Navigate to={redirectTo} />
+    return <Navigate to={redirectTo} />;
   }
-  return children
-}
+  
+  else return children;
+};

@@ -4,7 +4,6 @@ import {useData} from "../../context/DataContext";
 
 function SlidesContainer() {
   const {moviesByGenre, top10Movies} = useData();
-  console.log();
   return (
     <>
       <RowContainer

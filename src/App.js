@@ -6,7 +6,7 @@ import {ProtectedRoute, LoggedInRedirect} from "./helpers/ProtectedRoute";
 
 function App() {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter >
       <Routes>
         {/* home route will be redirected to browser if user is logged in */}
         <Route

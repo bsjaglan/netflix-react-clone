@@ -1,12 +1,12 @@
 import React from "react";
 import {Home, SignIn, Browse, SignUp} from "./pages";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 import {ROUTES} from "./constants/routes";
 import {ProtectedRoute, LoggedInRedirect} from "./helpers/ProtectedRoute";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* home route will be redirected to browser if user is logged in */}
         <Route
@@ -36,7 +36,7 @@ function App() {
         {/* sign up route */}
         <Route exact path={ROUTES.SIGN_UP} element={<SignUp />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -7,7 +7,7 @@ import {ProtectedRoute, LoggedInRedirect} from "./helpers/ProtectedRoute";
 function App() {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         {/* home route will be redirected to browser if user is logged in */}
         <Route

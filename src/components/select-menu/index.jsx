@@ -15,7 +15,7 @@ export default function SelectMenu({optionList, ...restProps}) {
   return (
     <Body {...restProps} onMouseLeave={() => setShowOptions(false)}>
       <Select onClick={() => setShowOptions(!showOptions)} tabIndex="1">
-        <LanguageIcon src="images/icons/language.png" />
+        <LanguageIcon src="./images/icons/language.png" />
         <span>{value}</span>
         {showOptions && (
           <OptionList>
@@ -27,7 +27,7 @@ export default function SelectMenu({optionList, ...restProps}) {
           </OptionList>
         )}
 
-        <DownArrowIcon src="images/icons/up-arrow.png" />
+        <DownArrowIcon src="./images/icons/up-arrow.png" />
       </Select>
     </Body>
   );

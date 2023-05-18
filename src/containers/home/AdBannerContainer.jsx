@@ -13,7 +13,7 @@ function AdBannerContainer() {
       <AdBanner.CustomLink >
         Learn More
         <img
-          src="images/icons/forward.png"
+          src="./images/icons/forward.png"
           style={{filter: "invert(1)", height: "18px"}}
         />
       </AdBanner.CustomLink>

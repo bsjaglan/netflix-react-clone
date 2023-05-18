@@ -54,7 +54,7 @@ Card.HoverButtons = function CardHoverButtons({children, ...restProps}) {
 Card.HoverPlayButton = function CardHoverPlayButton({...restProps}) {
   return (
     <HoverPlayButton {...restProps}>
-      <img src="images/icons/play-button-arrowhead.png" />
+      <img src="./images/icons/play-button-arrowhead.png" />
     </HoverPlayButton>
   );
 };
@@ -62,7 +62,7 @@ Card.HoverPlayButton = function CardHoverPlayButton({...restProps}) {
 Card.HoverAddButton = function CardHoverAddButton({size, color, ...restProps}) {
   return (
     <HoverAddButton size={size} color={color} {...restProps}>
-      <img src="images/icons/add.png" />
+      <img src="./images/icons/add.png" />
     </HoverAddButton>
   );
 };
@@ -74,7 +74,7 @@ Card.HoverLikeButton = function CardHoverLikeButton({
 }) {
   return (
     <HoverLikeButton size={size} color={color} {...restProps}>
-      <img src="images/icons/thumb-up.png" />
+      <img src="./images/icons/thumb-up.png" />
     </HoverLikeButton>
   );
 };
@@ -82,7 +82,7 @@ Card.HoverLikeButton = function CardHoverLikeButton({
 Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({...restProps}) {
   return (
     <HoverMoreInfoButton {...restProps}>
-      <img src="images/icons/forward.png" />
+      <img src="./images/icons/forward.png" />
     </HoverMoreInfoButton>
   );
 };
@@ -93,7 +93,7 @@ Card.HoverMostLikeButton = function CardHoverMostLikeButton({
 }) {
   return (
     <HoverMostLikeButton size={size} {...restProps}>
-      <img src="images/icons/black-thumb-only.png" />
+      <img src="./images/icons/black-thumb-only.png" />
     </HoverMostLikeButton>
   );
 };

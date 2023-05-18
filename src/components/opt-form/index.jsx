@@ -15,7 +15,7 @@ OptForm.Button = function OptFormButton({children, ...restProps}) {
     <Button {...restProps}>
       {children}
       <img
-        src="/images/icons/forward.png"
+        src="./images/icons/forward.png"
         alt="forward-icon"
       />
     </Button>

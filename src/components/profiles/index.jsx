@@ -22,7 +22,7 @@ Profiles.Name = function ProfilesName({children, ...restProps}){
 }
 
 Profiles.ProfileImage = function ProfilesProfileImage({src, ...restProps}){
-    return <ProfileImage {...restProps} src={src ? `/images/users/${src}.png` : '/images/icons/loading.gif'} />
+    return <ProfileImage {...restProps} src={src ? `./images/users/${src}.png` : './images/icons/loading.gif'} />
 }
 
 Profiles.Button = function ProfilesButton({children, ...restProps}){

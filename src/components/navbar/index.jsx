@@ -54,7 +54,7 @@ Navbar.Search = function NavbarSearch({...restProps}) {
       onClick={handleClickInside}
     >
       <SearchIcon>
-        <img src="/images/icons/search.png" alt="Search" />
+        <img src="./images/icons/search.png" alt="Search" />
       </SearchIcon>
       <SearchInput placeholder="Title, People, Genres" active={searchActive} />
     </Search>
